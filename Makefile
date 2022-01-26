@@ -11,8 +11,8 @@ all: check coverage mutants
 		setup \
 		tests
 
-module = dummy_transformations
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+module = position_traps_to_geojson
+codecov_token = 
 
 define lint
 	pylint \
