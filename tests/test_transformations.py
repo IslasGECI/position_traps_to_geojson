@@ -13,8 +13,15 @@ def test_pandas_to_geojson():
     expected = [
         {
             "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [125.6, 10.1]},
-            "properties": {"is_active": "true", "date": "2021-01-23"},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.27174112495435, 28.89831545888804],
+            },
+            "properties": {
+                "is_active": "true",
+                "date": "2021-04-06",
+                "id": "TC-01-003-AC",
+            },
         }
     ]
     obtained = ptg.pandas_to_geojson()
