@@ -12,7 +12,7 @@ all: check coverage mutants
 		tests
 
 module = position_traps_to_geojson
-codecov_token = 
+codecov_token = 90b4a28e-2f21-4f8d-940d-b1409a5befb4
 
 define lint
 	pylint \
