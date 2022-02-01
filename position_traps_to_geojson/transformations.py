@@ -1,7 +1,3 @@
-def add_offset(augend: int, addend: int) -> int:
-    return augend + addend
-
-
 def pandas_to_geojson() -> list[dict]:
     result = [
         {

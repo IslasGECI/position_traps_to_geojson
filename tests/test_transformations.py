@@ -1,12 +1,4 @@
-from position_traps_to_geojson import add_offset, pandas_to_geojson
-
-
-def test_add_offset():
-    augend = 1
-    addend = 2
-    expected = augend + addend
-    obtained = add_offset(augend, addend)
-    assert expected == obtained
+from position_traps_to_geojson import pandas_to_geojson
 
 
 def test_pandas_to_geojson():
