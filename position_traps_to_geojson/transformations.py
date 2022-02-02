@@ -9,7 +9,7 @@ def pandas_to_geojson(dataframe) -> list[dict]:
             },
             "properties": {
                 "is_active": "true",
-                "date": "2021-04-06",
+                "date": result2[0]["date"],
                 "id": "TC-01-003-AC",
             },
         }
