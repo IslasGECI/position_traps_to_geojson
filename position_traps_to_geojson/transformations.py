@@ -1,10 +1,11 @@
-def pandas_to_geojson() -> list[dict]:
+def pandas_to_geojson(dataframe) -> list[dict]:
+    result2 = dataframe.to_dict("records")
     result = [
         {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [-118.27174112495435, 28.89831545888804],
+                "coordinates": [result2[0]["lat"], result2[0]["long"]],
             },
             "properties": {
                 "is_active": "true",
