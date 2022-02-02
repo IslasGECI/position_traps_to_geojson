@@ -8,7 +8,7 @@ def pandas_to_geojson(dataframe) -> list[dict]:
                 "coordinates": [result2[0]["lat"], result2[0]["long"]],
             },
             "properties": {
-                "is_active": "true",
+                "is_active": result2[0]["is_active"],
                 "date": result2[0]["date"],
                 "id": "TC-01-003-AC",
             },
