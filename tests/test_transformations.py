@@ -105,3 +105,28 @@ def test_pandas_to_geojson():
     ]
     obtained = pandas_to_geojson(dataframe)
     assert expected == obtained
+    dataframe = pd.DataFrame.from_dict(
+        {
+            "lat": [-118.28],
+            "long": [28.87],
+            "is_active": [False],
+            "date": ["2022-02-02"],
+            "id": ["TC-01-003-XP"],
+        }
+    )
+    expected = [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.28, 28.87],
+            },
+            "properties": {
+                "is_active": False,
+                "date": "2022-02-02",
+                "id": "TC-01-003-XP",
+            },
+        }
+    ]
+    obtained = pandas_to_geojson(dataframe)
+    assert expected == obtained
