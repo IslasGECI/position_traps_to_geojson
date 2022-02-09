@@ -4,7 +4,7 @@ def pandas_to_geojson(dataframe) -> list[dict]:
     return {"type": "FeatureCollection", "features": feature_collection}
 
 
-def dictionary_to_geojson(row: dict) -> dict :
+def dictionary_to_geojson(row: dict) -> dict:
     return {
         "type": "Feature",
         "geometry": {
