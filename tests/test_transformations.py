@@ -1,3 +1,4 @@
+import pytest
 from position_traps_to_geojson import pandas_to_geojson
 import pandas as pd
 
@@ -6,36 +7,43 @@ def fix_expected(expected):
     return {"type": "FeatureCollection", "features": expected}
 
 
-def test_pandas_to_geojson():
-    dataframe = pd.DataFrame.from_dict(
-        [
-            {
-                "lat": [-118.27174112495435],
-                "long": [28.89831545888804],
-                "is_active": [True],
-                "date": ["2021-04-06"],
-                "id": ["TC-01-003-AC"],
-            }
-        ]
-    )
-    expected = [
+dataframe = pd.DataFrame.from_dict(
+    [
         {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-118.27174112495435, 28.89831545888804],
-            },
-            "properties": {
-                "is_active": True,
-                "date": "2021-04-06",
-                "id": "TC-01-003-AC",
-            },
+            "lat": [-118.27174112495435],
+            "long": [28.89831545888804],
+            "is_active": [True],
+            "date": ["2021-04-06"],
+            "id": ["TC-01-003-AC"],
         }
     ]
-    expected = fix_expected(expected)
+)
+expected = [
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.27174112495435, 28.89831545888804],
+        },
+        "properties": {
+            "is_active": True,
+            "date": "2021-04-06",
+            "id": "TC-01-003-AC",
+        },
+    }
+]
+expected = fix_expected(expected)
+
+testdata = (dataframe, expected)
+
+
+@pytest.mark.parametrize("dataframe,expected", testdata)
+def test_pandas_to_geojson(dataframe, expected):
     obtained = pandas_to_geojson(dataframe)
     assert expected == obtained
 
+
+def test_pandas_to_geojson_(dataframe, expected):
     dataframe = pd.DataFrame.from_dict(
         [
             {
@@ -122,6 +130,7 @@ def test_pandas_to_geojson():
     expected = fix_expected(expected)
     obtained = pandas_to_geojson(dataframe)
     assert expected == obtained
+
     dataframe = pd.DataFrame.from_dict(
         [
             {
