@@ -34,7 +34,7 @@ expected = [
 ]
 expected = fix_expected(expected)
 
-testdata = (dataframe, expected)
+testdata = [(dataframe, expected)]
 
 
 @pytest.mark.parametrize("dataframe,expected", testdata)
@@ -43,7 +43,7 @@ def test_pandas_to_geojson(dataframe, expected):
     assert expected == obtained
 
 
-def test_pandas_to_geojson_(dataframe, expected):
+def test_pandas_to_geojson_():
     dataframe = pd.DataFrame.from_dict(
         [
             {
