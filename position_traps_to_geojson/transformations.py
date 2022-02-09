@@ -1,7 +1,7 @@
 def pandas_to_geojson(dataframe) -> list[dict]:
     list_of_dictionary = dataframe.to_dict("records")
     result = [la_funcion(dictionary) for dictionary in list_of_dictionary]
-    return result
+    return {"type": "FeatureCollection", "features": result}
 
 
 def la_funcion(result2):
