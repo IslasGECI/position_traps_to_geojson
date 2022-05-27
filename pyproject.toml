@@ -7,6 +7,7 @@ author = "Ciencia de Datos • GECI"
 author-email = "ciencia.datos@islas.org.mx"
 classifiers = [ "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",]
 description-file = "README.md"
-home-page = "https://github.com/IslasGECI/dummy_transformations"
-module = "dummy_transformations"
+home-page = "https://github.com/IslasGECI/position_traps_to_geojson"
+module = "position_traps_to_geojson"
+requires = ["pandas", "pandas-stubs"]
 requires-python=">=3.9"
