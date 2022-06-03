@@ -1,3 +1,5 @@
+<img src="https://www.islas.org.mx/img/logo.svg" align="right" width="256" />
+
 # Dummy Transformations
 
 Para usar este repo como plantilla debemos hacer lo siguiente:
