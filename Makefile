@@ -59,5 +59,5 @@ init: install tests
 install:
 	pip install --editable .
 
-tests:
+tests: install
 	pytest --verbose
