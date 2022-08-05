@@ -11,8 +11,8 @@ all: check coverage mutants
 		setup \
 		tests
 
-module = dummy_transformations
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+module = position_traps_to_geojson
+codecov_token = 90b4a28e-2f21-4f8d-940d-b1409a5befb4
 
 define lint
 	pylint \
@@ -54,8 +54,12 @@ linter:
 mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-setup:
-	pip install .
+init: setup tests
+
+install:
+	pip install --editable .
+
+setup: clean install
 
 tests:
 	pytest --verbose
