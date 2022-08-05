@@ -54,10 +54,12 @@ linter:
 mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-init: install tests
+init: setup tests
 
 install:
 	pip install --editable .
 
-tests: install
+setup: clean install
+
+tests:
 	pytest --verbose
