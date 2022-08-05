@@ -9,11 +9,11 @@ def dictionary_to_geojson(row: dict) -> dict:
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [row["lat"][0], row["long"][0]],
+            "coordinates": [row["lat"], row["long"]],
         },
         "properties": {
-            "is_active": row["is_active"][0],
-            "date": row["date"][0],
-            "id": row["id"][0],
+            "is_active": row["is_active"],
+            "date": row["date"],
+            "id": row["id"],
         },
     }
