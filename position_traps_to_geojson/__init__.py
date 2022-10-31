@@ -2,3 +2,4 @@
 
 __version__ = "0.1.0"
 from .transformations import *  # noqa
+from .plot_position_traps import *  # noqa
