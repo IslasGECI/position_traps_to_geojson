@@ -12,6 +12,11 @@ class Test_LittleMap:
     mapita = LittleMap()
     mapita.load_data(dataframe)
 
+    def test_init(self):
+        mapita = LittleMap()
+        assert mapita.geopandas is None
+        assert mapita.island is None
+
     def test_property_geopandas(self):
         obtained_columns = len(self.mapita.geopandas.columns)
         assert obtained_columns == dataframe_columns + 1
