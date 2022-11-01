@@ -1,5 +1,16 @@
 import geopandas
 import utm
+import matplotlib.pyplot as plt
+
+
+class LittleMap():
+    def __init__(self):
+        self.geopandas = None
+    def load_data(self, original_data):
+        self.geopandas = add_geometry(original_data)
+    def plot(self, output_path):
+        self.geopandas.plot()
+        plt.savefig(output_path)
 
 
 def utm_2_lat_lon(x_coor, y_coor):
