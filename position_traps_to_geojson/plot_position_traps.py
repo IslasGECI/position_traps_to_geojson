@@ -14,7 +14,7 @@ class LittleMap:
     def plot(self, output_path):
         self.geopandas.plot()
         if isinstance(self.island, geopandas.GeoDataFrame):
-            ax = self.island.plot(color="white", edgecolor="black")
+            ax = self.island.plot(edgecolor="black", facecolor="#fffae6")
             self.geopandas.plot(ax=ax)
         plt.savefig(output_path)
 
