@@ -1,7 +1,6 @@
 import hashlib
 import os
 import pandas as pd
-import pytest
 
 from position_traps_to_geojson import LittleMap
 
