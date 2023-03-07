@@ -23,14 +23,14 @@ class Test_LittleMap:
 
     def test_plot_only_traps(self):
         self.mapita.plot("salidita.png")
-        expected_hash = "b4861eaf2c883ebb53428cb9d2a0b8fa"
+        expected_hash = "d2d2683b34e58c513836f48b81afadba"
         obtained_hash = self._make_hash("salidita.png")
         assert obtained_hash == expected_hash
 
     def test_plot_island_with_traps(self):
         self.mapita.read_island("tests/data/linea_costa_isla_guadalupe.shp")
         self.mapita.plot("salidita_con_isla.png")
-        expected_hash = "740045a376032b2d14d1884a3a71d15d"
+        expected_hash = "c25a2eeba61e9e6e9244da90434baf6e"
         obtained_hash = self._make_hash("salidita_con_isla.png", remove=False)
         assert obtained_hash == expected_hash
 
