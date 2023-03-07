@@ -9,5 +9,5 @@ classifiers = [ "License :: OSI Approved :: GNU General Public License v3 or lat
 description-file = "README.md"
 home-page = "https://github.com/IslasGECI/position_traps_to_geojson"
 module = "position_traps_to_geojson"
-requires = ["pandas", "pandas-stubs"]
+requires = ["geopandas", "matplotlib", "pandas", "pandas-stubs", "utm"]
 requires-python=">=3.9"
