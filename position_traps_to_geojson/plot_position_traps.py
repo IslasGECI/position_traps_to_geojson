@@ -17,9 +17,9 @@ class LittleMap:
         plt.gca().set_facecolor("#E6FFFF")
         self.geopandas.plot(ax=ax)
         if isinstance(self.island, geopandas.GeoDataFrame):
-            ax1 = self.island.plot(ax=ax, edgecolor="black", facecolor="#fffae6")
-            self.activated_traps.plot(ax=ax1, color="blue", markersize=4)
-            self.inactivated_traps.plot(ax=ax1, color="black", markersize=2)
+            ax1 = self.island.plot(ax=ax, edgecolor="black", facecolor="#fffae6", linewidth=0.5)
+            self.activated_traps.plot(ax=ax1, color="blue", markersize=2)
+            self.inactivated_traps.plot(ax=ax1, color="black", markersize=1)
         plt.savefig(output_path)
 
     def read_island(self, shp_path):
