@@ -4,7 +4,7 @@ import pandas as pd
 
 from position_traps_to_geojson import LittleMap
 
-dataframe = pd.read_csv("tests/data/position_traps_example.csv")
+dataframe = pd.read_csv("tests/data/actived_and_inactive_traps.csv")
 dataframe_columns = len(dataframe.columns)
 
 
@@ -23,14 +23,14 @@ class Test_LittleMap:
 
     def test_plot_only_traps(self):
         self.mapita.plot("salidita.png")
-        expected_hash = "d2d2683b34e58c513836f48b81afadba"
+        expected_hash = "d7ed621f49929e7c69b859c11512a6ed"
         obtained_hash = self._make_hash("salidita.png")
         assert obtained_hash == expected_hash
 
     def test_plot_island_with_traps(self):
         self.mapita.read_island("tests/data/linea_costa_isla_guadalupe.shp")
         self.mapita.plot("salidita_con_isla.png")
-        expected_hash = "c25a2eeba61e9e6e9244da90434baf6e"
+        expected_hash = "b580995b1833174669b10b4a392521c2"
         obtained_hash = self._make_hash("salidita_con_isla.png", remove=False)
         assert obtained_hash == expected_hash
 
