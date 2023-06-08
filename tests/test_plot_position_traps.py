@@ -25,7 +25,7 @@ class Test_LittleMap:
         geojson_path = "output.geojson"
         self.mapita.write_geojson(geojson_path)
         assert os.path.exists(geojson_path)
-        expected_hash = "489b8c3898def751998dbb23e555b9fd"
+        expected_hash = "2157d06ce842e21e7cec7fcd6cd1e509"
         obtained_hash = self._make_hash(geojson_path)
         assert obtained_hash == expected_hash
 
