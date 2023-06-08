@@ -13,7 +13,7 @@ class LittleMap:
 
     def load_data(self, original_data):
         self.datos = original_data.copy()
-        self.geopandas = self._add_geometry(original_data)
+        self.geopandas = self.XX_add_geometry()
         self.inactivated_traps = self.geopandas.loc[~self.geopandas["is_active"]]
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
 
