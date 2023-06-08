@@ -32,3 +32,6 @@ class LittleMap:
         return geopandas.GeoDataFrame(
             df, geometry=geopandas.points_from_xy(df["Coor-X"], df["Coor-Y"])
         )
+
+    def add_latlon(self):
+        pass
