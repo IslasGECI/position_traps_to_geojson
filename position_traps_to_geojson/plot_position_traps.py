@@ -1,6 +1,5 @@
 import geopandas
 import matplotlib.pyplot as plt
-import pandas as pd
 import utm
 
 
