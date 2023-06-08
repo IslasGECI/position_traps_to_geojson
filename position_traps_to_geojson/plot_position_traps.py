@@ -12,6 +12,7 @@ class LittleMap:
         self.datos = pd.read_csv("tests/data/actived_and_inactive_traps.csv")
 
     def load_data(self, original_data):
+        self.datos = original_data.copy()
         self.geopandas = self._add_geometry(original_data)
         self.inactivated_traps = self.geopandas.loc[~self.geopandas["is_active"]]
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
