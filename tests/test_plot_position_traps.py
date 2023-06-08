@@ -44,6 +44,9 @@ class Test_LittleMap:
         obtained_hash = self._make_hash("salidita_con_isla.png", remove=False)
         assert obtained_hash == expected_hash
 
+    def test_add_latlon(self):
+        self.mapita.add_latlon()
+
     def _make_hash(self, png_path, remove=True):
         file_content = open(png_path, "rb").read()
         obtained_hash = hashlib.md5(file_content).hexdigest()
