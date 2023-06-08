@@ -22,7 +22,9 @@ class Test_LittleMap:
         assert obtained_columns == dataframe_columns + 1
 
     def test_write_geojson(self):
-        self.mapita.write_geojson()
+        geojson_path = "output.geojson"
+        self.mapita.write_geojson(geojson_path)
+        assert os.path.exists(geojson_path)
 
     def test_plot_only_traps(self):
         self.mapita.plot("salidita.png")
