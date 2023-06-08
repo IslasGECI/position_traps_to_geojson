@@ -21,6 +21,9 @@ class Test_LittleMap:
         obtained_columns = len(self.mapita.geopandas.columns)
         assert obtained_columns == dataframe_columns + 1
 
+    def test_write_geojson(self):
+        self.mapita.write_geojson()
+
     def test_plot_only_traps(self):
         self.mapita.plot("salidita.png")
         expected_hash = "d7ed621f49929e7c69b859c11512a6ed"
