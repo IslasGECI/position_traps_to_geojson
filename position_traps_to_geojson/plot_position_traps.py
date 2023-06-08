@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 class LittleMap:
     def __init__(self):
+        self.coordinatesGRS = None
         self.geopandas = None
         self.island = None
 
