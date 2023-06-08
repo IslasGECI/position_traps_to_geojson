@@ -19,7 +19,7 @@ class LittleMap:
 
     def write_geojson(self, geojson_path):
         self._add_latlon()
-        geopandasGRS = self._add_geometry_latlon()
+        geopandasGRS = self._add_latlon_geometry()
         geopandasGRS.to_file(geojson_path, driver="GeoJSON")
 
     def plot(self, output_path):
@@ -41,7 +41,7 @@ class LittleMap:
             geometry=geopandas.points_from_xy(self.datos["Coor-X"], self.datos["Coor-Y"]),
         )
 
-    def _add_geometry_latlon(self):
+    def _add_latlon_geometry(self):
         return geopandas.GeoDataFrame(
             self.coordinatesGRS,
             geometry=geopandas.points_from_xy(
