@@ -9,7 +9,7 @@ class LittleMap:
         self.coordinatesGRS = None
         self.geopandas = None
         self.island = None
-        self.datos = pd.read_csv("tests/data/actived_and_inactive_traps.csv")
+        self.datos = None
 
     def load_data(self, original_data):
         self.datos = original_data.copy()
