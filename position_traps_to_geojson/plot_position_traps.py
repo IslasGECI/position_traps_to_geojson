@@ -13,7 +13,7 @@ class LittleMap:
 
     def load_data(self, original_data):
         self.datos = original_data.copy()
-        self.geopandas = self.XX_add_geometry()
+        self.geopandas = self._add_geometry()
         self.inactivated_traps = self.geopandas.loc[~self.geopandas["is_active"]]
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
 
@@ -35,7 +35,7 @@ class LittleMap:
     def read_island(self, shp_path):
         self.island = geopandas.read_file(shp_path)
 
-    def XX_add_geometry(self):
+    def _add_geometry(self):
         return geopandas.GeoDataFrame(
             self.datos,
             geometry=geopandas.points_from_xy(self.datos["Coor-X"], self.datos["Coor-Y"]),
