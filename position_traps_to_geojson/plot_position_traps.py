@@ -49,6 +49,12 @@ class LittleMap:
             ),
         )
 
+    def __add_type_geometry(self, df, x, y):
+        return geopandas.GeoDataFrame(
+            df,
+            geometry=geopandas.points_from_xy(df[x], df[y]),
+        )
+
     def _add_latlon(self):
         self.coordinatesGRS = self.datos.copy()
         coordinatesGRS = utm.to_latlon(
