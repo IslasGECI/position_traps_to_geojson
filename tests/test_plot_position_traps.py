@@ -22,7 +22,6 @@ class Test_LittleMap:
         obtained_columns = len(self.mapita.geopandas.columns)
         assert obtained_columns == dataframe_columns + 1
 
-    @pytest.mark.skip(reason="It is the gold")
     def test_write_geojson(self):
         geojson_path = "output.geojson"
         self.mapita.write_geojson(geojson_path)
