@@ -1,6 +1,7 @@
 import geopandas
 import matplotlib.pyplot as plt
 import pandas as pd
+import utm
 
 
 class LittleMap:
@@ -38,5 +39,8 @@ class LittleMap:
     def add_latlon(self, original_data="tests/data/actived_and_inactive_traps.csv"):
         datos = pd.read_csv(original_data)
         self.coordinatesGRS = datos.copy()
-        self.coordinatesGRS["lat"] = 1
-        self.coordinatesGRS["lon"] = 1
+        coordinatesGRS = utm.to_latlon(
+            self.coordinatesGRS["Coor-X"], self.coordinatesGRS["Coor-Y"], 11, "R"
+        )
+        self.coordinatesGRS["lat"] = coordinatesGRS[0]
+        self.coordinatesGRS["lon"] = coordinatesGRS[1]
