@@ -46,6 +46,7 @@ class Test_LittleMap:
 
     def test_add_latlon(self):
         self.mapita.add_latlon()
+        self.coordinatesGRS
 
     def _make_hash(self, png_path, remove=True):
         file_content = open(png_path, "rb").read()
