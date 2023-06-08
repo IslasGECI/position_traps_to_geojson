@@ -44,3 +44,11 @@ class LittleMap:
         )
         self.coordinatesGRS["lat"] = coordinatesGRS[0]
         self.coordinatesGRS["lon"] = coordinatesGRS[1]
+
+    def XXadd_latlonXX(self, datos):
+        self.coordinatesGRS = datos.copy()
+        coordinatesGRS = utm.to_latlon(
+            self.coordinatesGRS["Coor-X"], self.coordinatesGRS["Coor-Y"], 11, "R"
+        )
+        self.coordinatesGRS["lat"] = coordinatesGRS[0]
+        self.coordinatesGRS["lon"] = coordinatesGRS[1]
