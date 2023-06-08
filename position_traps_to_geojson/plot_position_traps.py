@@ -1,5 +1,6 @@
 import geopandas
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 class LittleMap:
@@ -34,5 +35,8 @@ class LittleMap:
             df, geometry=geopandas.points_from_xy(df["Coor-X"], df["Coor-Y"])
         )
 
-    def add_latlon(self):
-        pass
+    def add_latlon(self, original_data="tests/data/actived_and_inactive_traps.csv"):
+        datos = pd.read_csv(original_data)
+        self.coordinatesGRS = datos.copy()
+        self.coordinatesGRS["lat"] = 1
+        self.coordinatesGRS["lon"] = 1
