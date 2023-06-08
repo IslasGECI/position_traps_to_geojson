@@ -12,6 +12,9 @@ class LittleMap:
         self.inactivated_traps = self.geopandas.loc[~self.geopandas["is_active"]]
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
 
+    def write_geojson(self):
+        pass
+
     def plot(self, output_path):
         fig, ax = plt.subplots()
         plt.gca().set_facecolor("#E6FFFF")
