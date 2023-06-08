@@ -35,9 +35,6 @@ class LittleMap:
     def read_island(self, shp_path):
         self.island = geopandas.read_file(shp_path)
 
-    def _add_geometry(self, df):
-        return self.XX_add_geometry()
-
     def XX_add_geometry(self):
         return geopandas.GeoDataFrame(
             self.datos,
