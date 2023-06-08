@@ -40,7 +40,8 @@ class LittleMap:
 
     def XX_add_geometry(self, df):
         return geopandas.GeoDataFrame(
-            df, geometry=geopandas.points_from_xy(df["Coor-X"], df["Coor-Y"])
+            self.datos,
+            geometry=geopandas.points_from_xy(self.datos["Coor-X"], self.datos["Coor-Y"]),
         )
 
     def _add_geometry_latlon(self):
