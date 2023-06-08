@@ -38,10 +38,10 @@ class LittleMap:
         )
 
     def add_latlon(self, original_data="tests/data/actived_and_inactive_traps.csv"):
-        self.XXadd_latlonXX(self.datos)
+        self.XXadd_latlonXX()
 
-    def XXadd_latlonXX(self, datos):
-        self.coordinatesGRS = datos.copy()
+    def XXadd_latlonXX(self):
+        self.coordinatesGRS = self.datos.copy()
         coordinatesGRS = utm.to_latlon(
             self.coordinatesGRS["Coor-X"], self.coordinatesGRS["Coor-Y"], 11, "R"
         )
