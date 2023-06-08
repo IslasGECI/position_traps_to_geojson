@@ -36,6 +36,9 @@ class LittleMap:
         self.island = geopandas.read_file(shp_path)
 
     def _add_geometry(self, df):
+        return self.XX_add_geometry(df)
+
+    def XX_add_geometry(self, df):
         return geopandas.GeoDataFrame(
             df, geometry=geopandas.points_from_xy(df["Coor-X"], df["Coor-Y"])
         )
