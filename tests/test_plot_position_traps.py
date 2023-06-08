@@ -44,7 +44,7 @@ class Test_LittleMap:
         assert obtained_hash == expected_hash
 
     def test_add_latlon(self):
-        self.mapita.add_latlon()
+        self.mapita._add_latlon()
         expected_columns = ["lat", "lon"]
         obtained_columns = self.mapita.coordinatesGRS.columns
         assert all([expected_column in obtained_columns for expected_column in expected_columns])

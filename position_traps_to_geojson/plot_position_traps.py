@@ -18,7 +18,7 @@ class LittleMap:
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
 
     def write_geojson(self, geojson_path):
-        self.add_latlon()
+        self._add_latlon()
         geopandasGRS = self._add_geometry_latlon()
         geopandasGRS.to_file(geojson_path, driver="GeoJSON")
 
@@ -49,7 +49,7 @@ class LittleMap:
             ),
         )
 
-    def add_latlon(self):
+    def _add_latlon(self):
         self.coordinatesGRS = self.datos.copy()
         coordinatesGRS = utm.to_latlon(
             self.coordinatesGRS["Coor-X"], self.coordinatesGRS["Coor-Y"], 11, "R"
