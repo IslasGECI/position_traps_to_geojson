@@ -17,6 +17,8 @@ class Test_LittleMap:
         mapita = LittleMap()
         assert mapita.geopandas is None
         assert mapita.island is None
+        assert mapita.datos is None
+        assert mapita.coordinatesGRS is None
 
     def test_property_geopandas(self):
         obtained_columns = len(self.mapita.geopandas.columns)
