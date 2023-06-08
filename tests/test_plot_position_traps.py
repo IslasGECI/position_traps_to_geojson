@@ -25,6 +25,9 @@ class Test_LittleMap:
         geojson_path = "output.geojson"
         self.mapita.write_geojson(geojson_path)
         assert os.path.exists(geojson_path)
+        expected_hash = "489b8c3898def751998dbb23e555b9fd"
+        obtained_hash = self._make_hash(geojson_path)
+        assert obtained_hash == expected_hash
 
     def test_plot_only_traps(self):
         self.mapita.plot("salidita.png")

@@ -13,7 +13,7 @@ class LittleMap:
         self.activated_traps = self.geopandas.loc[self.geopandas["is_active"]]
 
     def write_geojson(self, geojson_path):
-        self.geopandas.to_file(geojson_path)
+        self.geopandas.to_file(geojson_path, driver="GeoJSON")
 
     def plot(self, output_path):
         fig, ax = plt.subplots()
