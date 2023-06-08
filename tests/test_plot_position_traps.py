@@ -49,6 +49,9 @@ class Test_LittleMap:
         expected_columns = ["lat", "lon"]
         obtained_columns = self.mapita.coordinatesGRS.columns
         assert all([expected_column in obtained_columns for expected_column in expected_columns])
+        expected_first_coordinates = [-118.285695988046413, 28.928849485750352]
+        obtained_first_lon = self.mapita.coordinatesGRS["lon"][0]
+        assert pytest.approx(obtained_first_lon, 0.01) == expected_first_coordinates[0]
 
     def _make_hash(self, png_path, remove=True):
         file_content = open(png_path, "rb").read()
