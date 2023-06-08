@@ -38,12 +38,7 @@ class LittleMap:
 
     def add_latlon(self, original_data="tests/data/actived_and_inactive_traps.csv"):
         datos = pd.read_csv(original_data)
-        self.coordinatesGRS = datos.copy()
-        coordinatesGRS = utm.to_latlon(
-            self.coordinatesGRS["Coor-X"], self.coordinatesGRS["Coor-Y"], 11, "R"
-        )
-        self.coordinatesGRS["lat"] = coordinatesGRS[0]
-        self.coordinatesGRS["lon"] = coordinatesGRS[1]
+        self.XXadd_latlonXX(datos)
 
     def XXadd_latlonXX(self, datos):
         self.coordinatesGRS = datos.copy()
